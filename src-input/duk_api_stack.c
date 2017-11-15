@@ -4355,6 +4355,14 @@ DUK_EXTERNAL const char *duk_push_string(duk_hthread *thr, const char *str) {
 	}
 }
 
+DUK_EXTERNAL const char *duk_push_literal_raw(duk_hthread *thr, const char *str, duk_size_t len) {
+	DUK_ASSERT_API_ENTRY(thr);
+	DUK_ASSERT(str != NULL);
+
+	/* No difference to duk_push_lstring() for now. */
+	return duk_push_lstring(thr, str, len);
+}
+
 DUK_EXTERNAL void duk_push_pointer(duk_hthread *thr, void *val) {
 	duk_tval *tv_slot;
 
